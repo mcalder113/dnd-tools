@@ -2737,7 +2737,7 @@ def race_fn():
     char_race = input("Enter Your Race (affects age, height, weight) [R]: ")
     if char_race in race_short:
         pass
-    elif char_race in ("R", "r", "Random", "random", ""):
+    elif char_race in ("R", "r", "Random", "random"):
         char_race = (random.choice(race_short))
     else:
         print("Race not available")
@@ -2747,7 +2747,7 @@ def race_fn():
 def class_fn():
     def adv_npc_fn():
         adv_npc = input("Select (A)dventurer or (N)PC Class [A]: ")
-        if adv_npc in ("A", "a", "Adventurer", "adventurer", ""):
+        if adv_npc in ("A", "a", "Adventurer", "adventurer"):
             choose_class()
         elif adv_npc in ("N", "n", "NPC", "npc"):
             choose_class_npc()
@@ -2761,7 +2761,7 @@ def class_fn():
         for char_class in class_desc:
             print("  ", char_class)
         char_class = input("Enter Your Class [R]: ")
-        if char_class in ("R", "r", "Random", "random", ""):
+        if char_class in ("R", "r", "Random", "random"):
             char_class = (random.choice(class_short))
         elif char_class not in class_short:
             print("Class not available")
@@ -2775,7 +2775,7 @@ def class_fn():
         for npc_class in class_npc:
             print("  ", npc_class)
         npc_class = input("Enter NPC Class [R] ")
-        if npc_class in ("R", "r", "Random", "random", ""):
+        if npc_class in ("R", "r", "Random", "random"):
             npc_class = (random.choice(class_npc))
         elif npc_class not in class_npc:
             print("Class not available")
@@ -2833,7 +2833,7 @@ def height_fn():
     print("Your race is", char_race)
     height_mod_fn()
     rnd_height = input("Do you want a random height? [Y]: ")
-    if rnd_height in ("Y", "y", "Yes", "yes", ""):
+    if rnd_height in ("Y", "y", "Yes", "yes"):
         rnd_height_fn()
     elif rnd_height in ("N", "n", "No", "no"):
         height = int(input("Enter your height in total inches: "))
@@ -2891,7 +2891,7 @@ def weight_fn():
     global rnd_height
     global char_weight
     rnd_weight = input("Do you want a random weight? [Y]: ")
-    if rnd_weight in ("Y", "y", "Yes", "yes", ""):
+    if rnd_weight in ("Y", "y", "Yes", "yes"):
         rnd_weight_fn()
     elif rnd_weight in ("N", "n", "No", "no"):
         char_weight = int(input("Enter your weight in pounds: "))
@@ -2906,7 +2906,7 @@ def age_fn():
         print(entry)
     print("Your race is", char_race)
     rnd_age = input("Do you want a random age? [Y]: ")
-    if rnd_age in ("Y", "y", "Yes", "yes", ""):
+    if rnd_age in ("Y", "y", "Yes", "yes"):
         if char_race in ("Dwarf", "Mountain Dwarf", "Hill Dwarf"):
             char_age = random.randrange(125, 350)
         if char_race in ("Elf", "Wood Elf", "High Elf", "Drow"):
@@ -2939,7 +2939,7 @@ def gender_fn():
     print("  (M)ale")
     print("  (F)emale")
     char_gender = input("Enter character gender [R]: ")
-    if char_gender in ("R", "r", "Random", "random", ""):
+    if char_gender in ("R", "r", "Random", "random"):
         char_gender = random.choice("MF")
     if char_gender in ("M", "m", "Male", "male"):
         char_gender = "Male"
@@ -3032,7 +3032,7 @@ def abilities_fn():
 
     def assign():
         rnd_assign = input("Do you want to randomly assign stat rolls? [Y]: ")
-        if rnd_assign in ("Y", "y", "Yes", "yes", ""):
+        if rnd_assign in ("Y", "y", "Yes", "yes"):
             random.shuffle(abl_scores)
             global abl_str
             global abl_dex
@@ -3071,7 +3071,7 @@ def abilities_fn():
     abl_scores = [score1, score2, score3, score4, score5, score6]
     print("  Your Rolles Scores Are: ", abl_scores)
     reroll = input("  Do you want to (C)ontinue or (R)eroll? [C]: ")
-    if reroll in ("C", "c", "Continue", "continue", ""):
+    if reroll in ("C", "c", "Continue", "continue"):
         assign()
         print("The Scores You Assigned Were:")
         print("   Strength: ", abl_str)
@@ -3243,7 +3243,7 @@ def modifiers_fn():
         prim_stat = "Wisdom"
     elif char_class == "Fighter":
         prim_stat = input("Choose (S)trength, (D)exterity or (R)andom [R]: ")
-        if prim_stat in ("R", "r", "Random", "random", ""):
+        if prim_stat in ("R", "r", "Random", "random"):
             prim_stat = random.choice("SD")
         if prim_stat in ("S", "s", "Strength", "strength"):
             prim_stat = "Strength"
@@ -3254,7 +3254,7 @@ def modifiers_fn():
             modifiers_fn()
     elif char_class in ("Monk", "Ranger"):
         prim_stat = input("Choose (D)exterity, (W)isdom or (R)andom [R]: ")
-        if prim_stat in ("R", "r", "Random", "random", ""):
+        if prim_stat in ("R", "r", "Random", "random"):
             prim_stat = random.choice("DW")
         if prim_stat in ("D", "d", "Dexterity", "dexterity"):
             prim_stat = "Dexterity"
@@ -3266,7 +3266,7 @@ def modifiers_fn():
     elif char_class == "Paladin":
         # str or cha
         prim_stat = input("Choose (S)trength, (C)harisma or (R)andom [R]: ")
-        if prim_stat in ("R", "r", "Random", "random", ""):
+        if prim_stat in ("R", "r", "Random", "random"):
             prim_stat = random.choice("SC")
         if prim_stat in ("S", "s", "Strength", "strength"):
             prim_stat = "Strength"
@@ -3879,7 +3879,7 @@ def alignment_fn():
 
     print("Finally choose alignment.")
     rnd_align = input("Do you want to use a random alignment? [Y]: ")
-    if rnd_align in ("Y", "y", "Yes", "yes", ""):
+    if rnd_align in ("Y", "y", "Yes", "yes"):
         goodevil_ls = ["Good", "Evil", "Neutral"]
         lawchaos_ls = ["Lawful", "Chaotic", "Neutral"]
         global align_lawchaos
@@ -3959,7 +3959,7 @@ def summary_fn():
     
 def save_fn():
     save_opt = input("Do you want to save this character? [Y]: ")
-    if save_opt in ("Y", "y", "Yes", "yes", ""):
+    if save_opt in ("Y", "y", "Yes", "yes"):
         original = sys.stdout
         f = open(char_name + ".txt", "w")
         sys.stdout = f
